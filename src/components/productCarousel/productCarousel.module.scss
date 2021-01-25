@@ -1,0 +1,64 @@
+$light_shadow:2px 5px 3px 0 rgba(0,0,0,0.25);
+$darkShadow:4px 10px 3px 0 rgba(0,0,0,0.5);
+$mainTransition: all 0.3s linear;
+
+.products{
+    margin: 1rem;
+}
+.products_container{
+    width: 95%;
+    margin: auto;
+    text-align: center;
+}
+.carousel_item{
+  
+    box-shadow:$light_shadow;
+    margin: 1rem;
+    text-align: center;
+    text-align: left;
+    transition: $mainTransition;
+    img{
+        max-height: 15rem;
+    }
+    &:hover{
+        box-shadow: $darkShadow;
+    }
+}
+.card_pricing{
+    color: #7DD5FD;
+}
+
+.product_btn{
+    background-color: #1C2230;
+    color: white;
+    display:inline-block;
+    border-radius: 0;
+    padding:0.75rem;
+    margin: 0.5rem 0rem;
+    font-size: 1.2rem;
+    width: 100%;
+    border-radius: 10px;
+    transition: $mainTransition;
+    &:hover{
+        background-color: #313c55;
+        color: white!important;
+        .btn_arrow{
+            transform: translateX(50%);
+        }
+    }
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none!important;
+}
+.btn_arrow{
+    font-size: 1.5rem;
+    vertical-align: middle;
+    transition: all 1s;
+    position: relative;
+}
+
+

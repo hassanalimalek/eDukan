@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+// Product Cart
+
+.cart_container{
+    border-bottom: 1px solid #888;
+    width:95%;
+    margin: 2rem auto;
+    font-weight: 300;
+}
+.full{
+    min-height: 75vh;
+}
+// Products
+.products{
+    display: flex;
+}
+
+// Product Image
+.product_img{
+    // border: 1px solid red;
+    width: 30%;
+}
+
+.actual_img{
+    height: 8rem;
+}
+
+// Product Description
+.product_description{
+    padding:1rem;
+    width:70%;
+    position: relative;
+    h3{
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+    h4{
+        font-size: 1.4rem;
+    }
+    .deleteIcon{
+        position: absolute;
+        top: 0.2rem;
+        right: 1rem;
+        font-size: 1.8rem;
+        color:#FF1053;
+        cursor: pointer;
+    }
+    
+}
+
+.bottomBar{
+    display:flex;
+    justify-content: space-between;
+    .price{
+        background-color:#7DD5FD;
+        color: black;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        font-size: 1.5rem;
+    }
+    .counter{
+        // background-color:orangered;
+        font-size: 1.5rem;
+        .quantityTxt{
+            margin: 0.5rem;
+        }
+        .productCount{
+            font-size: 1.7rem;
+        }
+        .countIcon{
+            position: relative;
+            top: 0.2rem;
+            margin: 0 0.2rem;
+        }
+    }
+}
+
+// Total Price  Container
+.totalPrice{
+    background-color:#1C2230;
+  
+    padding: 1rem;
+    width:50%;
+    margin-left: auto;
+    margin: 1rem 1rem 1rem auto;
+    h4{
+        color: #7DD5FD;
+    }
+
+    .orderContainer{
+        background-color: #fff;
+
+        .orderContainer_row{
+            display: flex;
+            font-size: 1.2rem;
+            justify-content: space-between;
+            border-bottom: 0.5px solid #888;
+            padding: 0.5rem;
+            font-weight: 300;
+        }
+        .orderTotal{
+            font-weight: 400;
+        }
+    }
+}
+
+// Empty Cart 
+.emptyCart{
+
+
+    position: relative;
+}
+.emptyCartContainer{
+    // max-height: 20rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
+
+@media only screen and (max-width: 520px){
+    .bottomBar{
+        flex-direction: column;
+        .price{
+            margin: 1rem 0.5rem;
+            align-self: flex-start;
+        }
+    }
+    .totalPrice{
+        width:90%;
+        margin:1rem auto !important;
+    }
+    
+
+        
+   
+}
