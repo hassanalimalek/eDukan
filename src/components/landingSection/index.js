@@ -3,10 +3,7 @@ import Styles from './landingSection.module.scss'
 import cx from 'classnames'
 import landingImg from '../../assets/images/landingImg.png'
 import Typist from 'react-text-typist';
-// Dialog
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
+
 
 function index() {
     return (
@@ -23,18 +20,7 @@ function index() {
                    <img alt="landing" src={landingImg}></img>
                 </div>
             </div>
-            <Dialog
-                        open
-                        // onClose={handleClose}
-                        aria-labelledby="simple-modal-title"
-                        aria-describedby="simple-modal-description"
-                    >
-                        <div>
-                            <h1>Hassan</h1>
-                            <h2>Modal</h2>
-                        </div>
-
-            </Dialog>
+          
         </div>
     )
 }
