@@ -2,6 +2,7 @@ $light_shadow:2px 5px 3px 0 rgba(0,0,0,0.25);
 $darkShadow:4px 10px 3px 0 rgba(0,0,0,0.5);
 $mainTransition: all 0.3s linear;
 
+// Products Carousel
 .products{
     margin: 1rem;
 }
@@ -11,11 +12,10 @@ $mainTransition: all 0.3s linear;
     text-align: center;
 }
 .carousel_item{
-  
-    box-shadow:$light_shadow;
     margin: 1rem;
     text-align: center;
     text-align: left;
+    box-shadow:$light_shadow;
     transition: $mainTransition;
     img{
         max-height: 15rem;
@@ -27,7 +27,7 @@ $mainTransition: all 0.3s linear;
 .card_pricing{
     color: #7DD5FD;
 }
-
+// View Details Button
 .product_btn{
     background-color: #1C2230;
     color: white;

@@ -7,6 +7,7 @@ import ProductCarousel from '../components/productCarousel'
 import ProductCover from '../components/productCover'
 import ProductDetail from '../components/productDetail'
 import ProductCart from '../components/productCart'
+import Checkout from '../components/checkout'
 import Footer from '../components/footer'
 
 
@@ -28,6 +29,10 @@ function Routing() {
             <Route exact path="/cart">
                 <ProductCart/>
             </Route>
+            <Route exact path="/checkout">
+                <Checkout/>
+            </Route>
+            
                
             <Footer/>
         </BrowserRouter>

@@ -6,8 +6,6 @@ import img5 from './assets/images/shoes/shoe5.png';
 import img6 from './assets/images/shoes/shoe6.png';
 
 
-
-
 import watchHeader from './assets/images/hero_watch.png'
 import watch1 from './assets/images/watches/watch1.png'
 import watch2 from './assets/images/watches/watch2.png'
@@ -98,7 +96,7 @@ let data = {
         basePrice:'3500',
         theme:'black'
     },
-    ,{
+    {
         id:2,
         title:'BrathWait',
         description:'',
@@ -157,7 +155,6 @@ let data = {
             basePrice:'3000',
             theme:'black'
         },
-        ,
         {
             id:3,
             title:'Manchester City',

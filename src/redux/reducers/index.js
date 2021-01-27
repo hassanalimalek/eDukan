@@ -1,11 +1,13 @@
 import rootReducer from './rootReducer'
 import { combineReducers } from 'redux'
-import getProduct from './getProduct'
 import cartReducer from './cartReducer'
+import loginReducer from './loginReducer'
+import orderReducer from './orderReducer'
 
 export default combineReducers({
-    getProduct,
     rootReducer,
-    cartReducer
+    cartReducer,
+    loginReducer,
+    orderReducer
     
 })

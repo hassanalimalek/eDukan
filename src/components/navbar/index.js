@@ -1,37 +1,46 @@
 import React from 'react'
 import cx from 'classnames'
 import styles from './navbar.module.scss'
-import './modal.css'
-import { useSelector } from 'react-redux'
-import { useState,useEffect } from 'react'
+import { useSelector,useDispatch } from 'react-redux'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+// History
+import { useHistory } from "react-router-dom";
 
-// Dialog
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
+// Modal Component
+import Modal from '../modal'
+
 // Icons
 import { FaFacebookF,FaShoppingCart } from 'react-icons/fa'
 import { FiInstagram } from 'react-icons/fi'
 import { AiOutlineTwitter } from 'react-icons/ai'
-import { BiUserCircle } from 'react-icons/bi'
 
-// Slide
-import Slide from '@material-ui/core/Slide';
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="left" ref={ref} {...props} />;
-});
 
 
 function Index() {
-    let [modal,setModal] = useState(false);
-    const state = useSelector((state)=>state["cartReducer"]);
-    var value=0;
-    if(state.length){
-        value=(state[0].totalProducts)
-    }
+    let dispatch = useDispatch();
+    let history = useHistory();
 
+    let [modalState,setModalState] = useState(false);
+    let cartState = useSelector((state)=>state["cartReducer"]);
+    let loginState =useSelector((state)=>state["loginReducer"]["login"])
+
+    // Cart Value in Navbar 
+    var value=0;
+    if(cartState.length){
+        value=(cartState[0].totalProducts)
+    }
+    
+   let closeModal=()=>{
+       setModalState(false);
+   }
+    
+   let logout = ()=>{
+        dispatch({ type: 'logout'})
+        closeModal();
+        history.push('/')   
+    }
 
 
     return (
@@ -52,49 +61,15 @@ function Index() {
                     <div>
                         <Link
                          to="/cart" className={styles.productCart}><FaShoppingCart/><span className={styles.cartValue}>{value}</span></Link>
-                        <button onClick={()=>setModal(true)} className={cx("generic_btn",styles.login_btn)}>Login</button>
+                         {(loginState)?
+                                 <button onClick={()=>logout()}  className={cx("generic_btn",styles.login_btn)}>Logout</button>:
+                                 <button onClick={()=>{setModalState(true)}}  className={cx("generic_btn",styles.login_btn)}>Login</button>
+                         }
+                         <Modal state={modalState} closeModal={closeModal}/>
                     </div>
                 </div>
             </div>
         </nav>
-        <div>
-            <Dialog
-            open = {modal}
-            TransitionComponent={Transition}
-            onBackdropClick = {()=>setModal(false)}
-            onEscapeKeyDown  = {()=>setModal(false)}
-            aria-labelledby="simple-modal-title"
-            aria-describedby="simple-modal-description"
-            >
-                <div className="login-form">
-                    <form>
-                        <div className="avatar">
-                        <i className="material-icons"><BiUserCircle/></i>
-                        </div>
-                        <h4 className="modal-title">Login to Your Account</h4>
-                        <div className="form-group">
-                            <input type="text" className="form-control"
-                            placeholder="UserName" required/>
-                        </div>
-                        <div>
-                            <input type="text" className="form-control"
-                            placeholder="Password"
-                            require/>
-                        </div>
-                        <div className="form-group small clearfix">
-                            <label className="check-inline">
-                                <a href="#" className="forgot-link">Forgot Password?</a>
-                            </label>
-                        </div>
-                        <input type="submit" className="btn btn-primary btn-block" value="Login"/>
-                    </form>
-                    <div className="text-center small">
-                        Don't have an account.
-                    </div>
-                </div>
-                
-            </Dialog>
-        </div>
         
         </>
     )

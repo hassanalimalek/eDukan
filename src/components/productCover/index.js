@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './productCover.module.scss'
 import cx from 'classnames'
-import {Link} from 'react-scroll'
 
+import {Link} from 'react-scroll'
 import {useSelector} from 'react-redux'
 
 
@@ -25,7 +25,6 @@ function Index(props) {
                     <p className="card-text">{state.description}</p>
                     <Link to={id} smooth={true}>
                         <button className={cx(styles.view_btn,"generic_btn")}>View More</button>
-                        
                     </Link>
                   </div>
                 </div>

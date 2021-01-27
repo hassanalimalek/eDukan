@@ -1,5 +1,6 @@
-// Landing Page
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+// Landing Page
 
 .landing{
     background-color: #1C2230;
@@ -14,7 +15,8 @@
     align-items: center;
     height:90vh;
 }
-// Txt
+
+// Landing Page Txt
 .landing_txt{
     // background-color:orange;
     flex-grow: 1;
@@ -30,7 +32,7 @@
     text-indent: 1rem;
 }
 
-// Image
+// Landing Image
 .landing_img{
     // background-color:aquamarine;
     flex-grow: 1;
@@ -43,6 +45,8 @@ img{
     margin: auto;
     
 }
+
+// Media Queries
 
 @media only screen and (max-width: 900px) {
     .landing_main_txt{

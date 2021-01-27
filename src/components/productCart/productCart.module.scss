@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
-// Product Cart
+$light_shadow:2px 2px 2px 0 rgba(0,0,0,0.25);
+$darkShadow:4px 5px 3px 0 rgba(0,0,0,0.5);
+$mainTransition: all 0.3s linear;
 
+// Product Cart
 .cart_container{
     border-bottom: 1px solid #888;
     width:95%;
@@ -8,41 +11,55 @@
     font-weight: 300;
 }
 .full{
-    min-height: 75vh;
+    min-height: 80vh;
+}
+.myBag{
+    margin:1rem;
+    font-weight: 300;
+    letter-spacing:0.2rem
 }
 // Products
-.products{
+.product{
     display: flex;
+    // background-color: #333;
+    box-shadow:$light_shadow;
+    transition: $mainTransition;
+    &:hover{
+        box-shadow: $darkShadow;
+    }
 }
 
 // Product Image
 .product_img{
     // border: 1px solid red;
-    width: 30%;
+    // width: 30%;
+    .actual_img{
+        height: 8rem;
+        margin-left:0;
+        margin-right: 1rem;
+    }
 }
 
-.actual_img{
-    height: 8rem;
-}
+
 
 // Product Description
 .product_description{
-    padding:1rem;
-    width:70%;
+    padding-top:1rem;
+    width:75%;
     position: relative;
     h3{
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: 400;
     }
     h4{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     .deleteIcon{
         position: absolute;
         top: 0.2rem;
         right: 1rem;
         font-size: 1.8rem;
-        color:#FF1053;
+        color:#bd1430;
         cursor: pointer;
     }
     
@@ -56,10 +73,9 @@
         color: black;
         padding: 0.5rem;
         border-radius: 1rem;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     .counter{
-        // background-color:orangered;
         font-size: 1.5rem;
         .quantityTxt{
             margin: 0.5rem;
@@ -71,6 +87,11 @@
             position: relative;
             top: 0.2rem;
             margin: 0 0.2rem;
+            cursor: pointer;
+            transition:$mainTransition;
+            &:hover{
+                font-size: 1.6rem;
+            }
         }
     }
 }
@@ -78,11 +99,12 @@
 // Total Price  Container
 .totalPrice{
     background-color:#1C2230;
-  
+    box-shadow:$light_shadow;
+    transition: $mainTransition;
     padding: 1rem;
     width:50%;
     margin-left: auto;
-    margin: 1rem 1rem 1rem auto;
+    margin: 1rem 2rem 1rem auto;
     h4{
         color: #7DD5FD;
     }
@@ -101,13 +123,22 @@
         .orderTotal{
             font-weight: 400;
         }
+        .checkoutBtn{
+            background-color: #1C2230;
+            color: white;
+            &:hover{
+                background-color:#7DD5FD;
+                color: black;
+            }
+        }
+        .loginTxt{
+            color:#1C2230;
+        }
     }
 }
 
-// Empty Cart 
+// Empty Cart  
 .emptyCart{
-
-
     position: relative;
 }
 .emptyCartContainer{
@@ -133,8 +164,5 @@
         width:90%;
         margin:1rem auto !important;
     }
-    
-
         
-   
 }

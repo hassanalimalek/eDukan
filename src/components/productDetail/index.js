@@ -4,29 +4,25 @@ import styles  from './productDetail.module.scss'
 import { useSelector,useDispatch } from 'react-redux'
 import { useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
+// Icons
 import { MdAddShoppingCart } from 'react-icons/md'
 import { BiLeftArrowCircle} from 'react-icons/bi'
 
 
 const addToCart = (product,dispatch)=>{
-    console.log("!!!!")
-    console.log(product)
     dispatch({ type: 'addToCart',payload:{product: product} })
 }
 
 function Index(props) {
     let dispatch = useDispatch()
-    console.log(props.match.params)
     const [product,setProduct] = useState([]);
     let {category,id} = props.match.params;
     const singleProduct = useSelector((state)=>state.rootReducer[category][id])
     
     useEffect(() => {
         setProduct(singleProduct);
-      },[category]);
+      },[singleProduct]);
     
-    console.log("Product Detail !!!")
-    console.log(product)
     
     if(product){
         return (
@@ -34,7 +30,7 @@ function Index(props) {
             <div className={cx(styles.productContainer)}>
                 <div className={cx(styles.productImg)}>
                     <Link exact to='/' className={styles.backArrow}><BiLeftArrowCircle/></Link>
-                    <img src={product.imgSrc}></img>
+                    <img alt="Product Detail img" src={product.imgSrc}></img>
                 </div>
                 <div className={cx(styles.productTxt)}>
                     <h2>{product.title}</h2>
