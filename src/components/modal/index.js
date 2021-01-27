@@ -74,7 +74,7 @@ function Modal(props) {
                 <div className="login-form">
                     <form  onSubmit={(e)=>formSubmit(e)}>
                         <AiFillCloseSquare className="crossIcon"
-                        onClick={()=>{props.closeFunc();setModal(false)}}
+                        onClick={()=>{props.closeModal();setModal(false)}}
                         />
                         <div className="avatar">
                             <span className="avatar_Txt"><span>e</span>Dukan</span>

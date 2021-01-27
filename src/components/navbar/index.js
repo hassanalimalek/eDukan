@@ -14,6 +14,7 @@ import Modal from '../modal'
 import { FaFacebookF,FaShoppingCart } from 'react-icons/fa'
 import { FiInstagram } from 'react-icons/fi'
 import { AiOutlineTwitter } from 'react-icons/ai'
+import { IoExitOutline } from 'react-icons/io5'
 
 
 
@@ -62,7 +63,7 @@ function Index() {
                         <Link
                          to="/cart" className={styles.productCart}><FaShoppingCart/><span className={styles.cartValue}>{value}</span></Link>
                          {(loginState)?
-                                 <button onClick={()=>logout()}  className={cx("generic_btn",styles.login_btn)}>Logout</button>:
+                                 <button onClick={()=>logout()}  className={cx("generic_btn",styles.login_btn)}>Logout  {<IoExitOutline className={styles.logoutIcon}/>}</button>:
                                  <button onClick={()=>{setModalState(true)}}  className={cx("generic_btn",styles.login_btn)}>Login</button>
                          }
                          <Modal state={modalState} closeModal={closeModal}/>
