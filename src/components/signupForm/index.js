@@ -23,7 +23,7 @@ function Index({updateDialogFunc,closeDialog,setDialogState,goToLogin}) {
             setSignUpErrorType("Password is too short")
         }
         else if(password !== confirmPassword){
-            setSignUpErrorType("Passwords are not Equal")
+            setSignUpErrorType("Passwords are not the Same")
         }
         else{
             setSignUpErrorType("")
