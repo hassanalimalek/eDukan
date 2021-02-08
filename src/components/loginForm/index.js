@@ -46,7 +46,7 @@ function Index({updateDialogFunc,closeDialog,setDialogState,goToSignUp}) {
                             placeholder="UserName" required/>
                         </div>
                         <div className="mb-4">
-                            <input id="password" type="text" className="form-control"
+                            <input id="password"      type="password" className="form-control"
                             placeholder="Password"
                             required/>
                         </div>
