@@ -70,12 +70,12 @@ function Index({updateDialogFunc,closeDialog,setDialogState,goToLogin}) {
                             placeholder="Email" required/>
                         </div>
                         <div className="form-group">
-                            <input id="signUppassword" type="text" className="form-control"
+                            <input id="signUppassword" type="password" className="form-control"
                             placeholder="Password Minimum 6 Characters"
                             required/>
                         </div>
                         <div>
-                            <input id="confirmPassword" type="text" className="form-control"
+                            <input id="confirmPassword" type="password" className="form-control"
                             placeholder="Confirm Password"
                             required/>
                         </div>
