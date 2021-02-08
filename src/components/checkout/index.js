@@ -20,6 +20,7 @@ import {db} from '../../utils/firebase'
 
 
 function Checkout(props) {
+    console.log(props)
     let dispatch = useDispatch();
     useEffect(() => {
         window.scrollTo(0,0);

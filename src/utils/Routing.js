@@ -80,9 +80,10 @@ function Routing() {
                 <Route exact path="/cart">
                     <ProductCart/>
                 </Route>
-                <Route exact path="/checkout">
-                    <Checkout/>
-                </Route>   
+                <Route exact path="/checkout" render={(props)=>
+                      <Checkout {...props}/>
+                }/>
+                   
                 <Footer/>
            </BrowserRouter>
             )
