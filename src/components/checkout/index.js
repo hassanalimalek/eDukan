@@ -20,7 +20,6 @@ import {db} from '../../utils/firebase'
 
 
 function Checkout(props) {
-    console.log(props)
     let dispatch = useDispatch();
     useEffect(() => {
         window.scrollTo(0,0);
@@ -32,7 +31,6 @@ function Checkout(props) {
         var totalPrice = cartState[0]["totalPrice"]
         var orderedProducts = cartState.slice(1)
         var formHandler = (form)=>{
-            console.log(form.firstName.value)
             db.ref(`orders/`).push(
                 {
                     "First Name":form.firstName.value,"Last Name":form.lastName.value,

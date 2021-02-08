@@ -9,9 +9,13 @@ const loginReducer = (state=defaultVal,action)=>{
             return {...state}
         case 'logout':
             state["login"]=false;
-            window.localStorage.setItem('user',JSON.stringify(null))
+            localStorage.clear();
             return {...state}
         default:
+            if (localStorage.user){
+                state["login"]=true;
+                return {...state}
+            }
             return state
     }
 }
