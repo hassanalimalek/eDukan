@@ -28,6 +28,9 @@ function Index(props) {
 
     let [loginDialogState,setloginDialogState] = useState(true);
     let [signupDialogState,setSignupDialogState] = useState (false);
+
+    console.log("Dialog State",dialogState)
+    console.log("Login State",loginState)
   
     useEffect(()=>{
         setDialogState(props.state)

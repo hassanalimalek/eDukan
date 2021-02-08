@@ -20,6 +20,10 @@ function Index({updateDialogFunc,closeDialog,setDialogState,goToSignUp}) {
                 window.localStorage.setItem('user',JSON.stringify(auth.currentUser))
                 dispatch({ type: 'login',payload:"allow" });
                 updateDialogFunc("onsubmit");
+                setTimeout(()=>{
+                    closeDialog()
+                    dispatch({ type: 'logout'})
+                },1200000)
             }
             else {
                 updateDialogFunc("emailNotVerfied")

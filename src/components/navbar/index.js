@@ -62,7 +62,10 @@ function Index() {
                          to="/cart" className={styles.productCart}><FaShoppingCart/><span className={styles.cartValue}>{value}</span></Link>
                          {(loginState)?
                                  <button onClick={()=>logout()}  className={cx("generic_btn",styles.login_btn)}>{(JSON.parse(window.localStorage.user)).displayName} {<IoExitOutline className={styles.logoutIcon}/>}</button>:
-                                 <button onClick={()=>{setDialogState(true)}}  className={cx("generic_btn",styles.login_btn)}>Login</button>
+                                 <button onClick={()=>{
+                                     console.log("Click !!!!! Dialog State",dialogState)
+                                     setDialogState(true)
+                                    console.log(dialogState)}}  className={cx("generic_btn",styles.login_btn)}>Login</button>
                          }
                          <Dialog state={dialogState} closeDialog={closeDialog}/>
                     </div>
