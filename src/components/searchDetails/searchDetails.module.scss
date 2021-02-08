@@ -1,0 +1,93 @@
+// Search searchDetails
+$light_shadow: 2px 5px 3px 0 rgba(0, 0, 0, 0.25);
+$darkShadow: 4px 10px 3px 0 rgba(0, 0, 0, 0.5);
+$mainTransition: all 0.3s linear;
+
+// Back Arrow
+.backArrow {
+  border: none;
+  //   background-color: transparent;
+  font-size: 2.5rem;
+  margin: 0.5rem;
+  color: #111;
+  // background-color: white;
+}
+
+// Main Title
+.searchDetailTitle {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+// Input Div
+.inputDiv {
+  max-width: 15rem;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.searchBtn {
+  margin-right: auto;
+  display: inline-block;
+  background-color: #222;
+  color: white;
+  transition: 0.4s;
+  text-align: center !important;
+  font-size: 1.15rem;
+  &:hover {
+    background-color: #7dd5fd;
+    color: #222;
+  }
+}
+
+// Product Cards
+.productCard {
+  margin-bottom: 0.5rem;
+  transition: $mainTransition;
+  &:hover {
+    box-shadow: $light_shadow;
+  }
+  h3 {
+    font-size: 1.4rem;
+    display: inline-block;
+    width: 50%;
+    vertical-align: bottom;
+
+    span {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #39a0cf;
+    }
+  }
+}
+
+.productImg {
+  max-width: 10rem !important;
+}
+
+.productBottomBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchDetailBtn {
+  background-color: #222;
+  color: white;
+  transition: 0.4s;
+  display: inline-block;
+  text-align: center !important;
+  font-size: 1.2rem;
+  font-weight: 300;
+  //   padding-left: 0.15rem;
+  &:hover {
+    background-color: #7dd5fd;
+    color: #222;
+  }
+}
+
+// No Product Image div
+.noProduct {
+  min-height: 75vh;
+}

@@ -1,0 +1,42 @@
+// SearchBar
+
+.searchBar {
+  background-color: #f5f5f5;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.searchBarContainer {
+  width: 95%;
+  margin: auto;
+  padding: 4rem 2rem;
+
+  .searchTitle {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+  .inputGroup {
+    margin: auto;
+    text-align: center;
+    div {
+      margin-right: auto;
+    }
+  }
+  input {
+    margin-left: auto;
+    max-width: 20rem;
+  }
+  .searchBtn {
+    margin-right: auto;
+    display: inline-block;
+    background-color: #222;
+    color: white;
+    transition: 0.4s;
+    text-align: center !important;
+    font-size: 1.15rem;
+    &:hover {
+      background-color: #7dd5fd;
+      color: #222;
+    }
+  }
+}

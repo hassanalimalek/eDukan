@@ -1,168 +1,190 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
-$light_shadow:2px 2px 2px 0 rgba(0,0,0,0.25);
-$darkShadow:4px 5px 3px 0 rgba(0,0,0,0.5);
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap");
+$light_shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.25);
+$darkShadow: 4px 5px 3px 0 rgba(0, 0, 0, 0.5);
 $mainTransition: all 0.3s linear;
 
 // Product Cart
-.cart_container{
-    border-bottom: 1px solid #888;
-    width:95%;
-    margin: 2rem auto;
-    font-weight: 300;
+
+.productCartMainContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 70rem;
+  width: 95%;
+  margin: 2rem auto;
 }
-.full{
-    min-height: 80vh;
+
+.cart_container {
+  //   width: 95%;
+  font-weight: 300;
 }
-.myBag{
-    margin:1rem;
-    font-weight: 300;
-    letter-spacing:0.2rem
+.full {
+  min-height: 80vh;
 }
+.myBag {
+  margin: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+}
+
 // Products
-.product{
-    display: flex;
-    // background-color: #333;
-    box-shadow:$light_shadow;
-    transition: $mainTransition;
-    &:hover{
-        box-shadow: $darkShadow;
-    }
+.product {
+  display: flex;
+  max-width: 75rem;
+  margin: auto;
+  margin-bottom: 2rem;
+  padding: 1rem 0.5rem;
+  border-radius: 10px;
+  box-shadow: $light_shadow;
+  transition: $mainTransition;
+  &:hover {
+    box-shadow: $darkShadow;
+  }
+  h6 {
+    font-weight: 300;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
 }
 
 // Product Image
-.product_img{
-    // border: 1px solid red;
-    // width: 30%;
-    .actual_img{
-        height: 8rem;
-        margin-left:0;
-        margin-right: 1rem;
-    }
+.product_img {
+  margin-left: 5%;
+  width: 20%;
+  .actual_img {
+    height: 8rem;
+    margin-left: 0;
+    margin-right: 1rem;
+  }
 }
-
-
 
 // Product Description
-.product_description{
-    padding-top:1rem;
-    width:75%;
-    position: relative;
-    h3{
-        font-size: 1.6rem;
-        font-weight: 400;
-    }
-    h4{
-        font-size: 1.2rem;
-    }
-    .deleteIcon{
-        position: absolute;
-        top: 0.2rem;
-        right: 1rem;
-        font-size: 1.8rem;
-        color:#bd1430;
-        cursor: pointer;
-    }
-    
+.product_description {
+  padding-top: 1rem;
+  width: 75%;
+  position: relative;
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  .deleteIcon {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.5rem;
+    font-size: 1.8rem;
+    color: #bd1430;
+    cursor: pointer;
+  }
 }
 
-.bottomBar{
-    display:flex;
-    justify-content: space-between;
-    .price{
-        background-color:#7DD5FD;
-        color: black;
-        padding: 0.5rem;
-        border-radius: 1rem;
-        font-size: 1.2rem;
+.bottomBar {
+  display: flex;
+  justify-content: space-between;
+  .price {
+    background-color: #7dd5fd;
+    color: black;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+  }
+  .counter {
+    font-size: 1.5rem;
+    .quantityTxt {
+      margin: 0.5rem;
     }
-    .counter{
-        font-size: 1.5rem;
-        .quantityTxt{
-            margin: 0.5rem;
-        }
-        .productCount{
-            font-size: 1.7rem;
-        }
-        .countIcon{
-            position: relative;
-            top: 0.2rem;
-            margin: 0 0.2rem;
-            cursor: pointer;
-            transition:$mainTransition;
-            &:hover{
-                font-size: 1.6rem;
-            }
-        }
+    .productCount {
+      font-size: 1.7rem;
     }
+    .countIcon {
+      position: relative;
+      margin: 0 0.2rem;
+      cursor: pointer;
+      transition: $mainTransition;
+      &:hover {
+        font-size: 1.6rem;
+      }
+    }
+  }
 }
 
 // Total Price  Container
-.totalPrice{
-    background-color:#1C2230;
-    box-shadow:$light_shadow;
-    transition: $mainTransition;
-    padding: 1rem;
-    width:50%;
-    margin-left: auto;
-    margin: 1rem 2rem 1rem auto;
-    h4{
-        color: #7DD5FD;
-    }
+.totalPrice {
+  background-color: #1c2230;
+  box-shadow: $light_shadow;
+  transition: $mainTransition;
+  padding: 1rem;
+  width: 60%;
+  margin-left: auto;
+  //   margin: 0.5rem auto 1rem 1rem;
+  h4 {
+    color: #7dd5fd;
+  }
 
-    .orderContainer{
-        background-color: #fff;
-
-        .orderContainer_row{
-            display: flex;
-            font-size: 1.2rem;
-            justify-content: space-between;
-            border-bottom: 0.5px solid #888;
-            padding: 0.5rem;
-            font-weight: 300;
-        }
-        .orderTotal{
-            font-weight: 400;
-        }
-        .checkoutBtn{
-            background-color: #1C2230;
-            color: white;
-            &:hover{
-                background-color:#7DD5FD;
-                color: black;
-            }
-        }
-        .loginTxt{
-            color:#1C2230;
-        }
+  .orderContainer {
+    background-color: #fff;
+    .orderContainer_row {
+      display: flex;
+      font-size: 1.2rem;
+      justify-content: space-between;
+      padding: 0.5rem;
+      font-weight: 300;
     }
+    .lastRow {
+      display: flex;
+      justify-content: space-between;
+    }
+    .orderTotal {
+      font-weight: 400;
+    }
+    .checkoutBtn {
+      background-color: #1c2230;
+      color: white;
+      &:hover {
+        background-color: #7dd5fd;
+        color: black;
+      }
+    }
+    .loginTxt {
+      color: #1c2230;
+      font-size: 1.1rem;
+      align-self: center;
+      text-align: right;
+    }
+  }
 }
 
-// Empty Cart  
-.emptyCart{
-    position: relative;
+// Empty Cart
+.emptyCart {
+  position: relative;
 }
-.emptyCartContainer{
-    // max-height: 20rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+.emptyCartContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
+@media only screen and (max-width: 520px) {
+  .product_img {
+    margin-left: 0%;
+    //   margin-right: 5%;
+    // width: 20%;
+    width: auto;
+  }
 
-
-@media only screen and (max-width: 520px){
-    .bottomBar{
-        flex-direction: column;
-        .price{
-            margin: 1rem 0.5rem;
-            align-self: flex-start;
-        }
+  .bottomBar {
+    flex-direction: column;
+    .price {
+      margin: 1rem 0.5rem;
+      align-self: flex-start;
     }
-    .totalPrice{
-        width:90%;
-        margin:1rem auto !important;
-    }
-        
+  }
+  .totalPrice {
+    width: 90%;
+    margin: 1rem auto !important;
+  }
 }

@@ -22,6 +22,7 @@ const cartReducer = (state=[],action)=>{
     switch(action.type){
 
         case 'addToCart':
+            console.log("ADD TO CART REDUCER")
             let product = action.payload.product
             if(!state.length){
                 product.count = 1;
@@ -32,7 +33,7 @@ const cartReducer = (state=[],action)=>{
             else{
                 let check = false;
                 check =state.find((stateProduct)=>{
-                    if(stateProduct.title === product.title){
+                    if(stateProduct.title === product.title && stateProduct.selectedSize === product.selectedSize){
                         countInc(stateProduct)
                         stateProduct["subPrice"] = stateProduct.basePrice*stateProduct.count
                         state[0]["totalPrice"]+=Number(stateProduct.basePrice)
@@ -41,7 +42,6 @@ const cartReducer = (state=[],action)=>{
                     return false;
                 })
                 if(check){
-                    console.log(state)
                     return [...state]
                 }
                 else{
@@ -65,9 +65,6 @@ const cartReducer = (state=[],action)=>{
             if(state[index].count!==5){
                 state[index].count+=1;
                 state[0]["totalProducts"]+=1;
-                console.log("Total Price")
-                console.log( state[0]["totalPrice"])
-                console.log(state[index].basePrice)
                 state[0]["totalPrice"]+=Number(state[index].basePrice)
                 updateSubPrice(index);
             }
@@ -81,11 +78,6 @@ const cartReducer = (state=[],action)=>{
         case 'clearCart':
             state.length=0
             return [...state]
-        
-                
-            
-           
-           
         default:
             return state
     }

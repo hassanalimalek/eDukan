@@ -1,19 +1,19 @@
 import React from 'react'
 import styles from './productCover.module.scss'
 import cx from 'classnames'
-
 import {Link} from 'react-scroll'
 import {useSelector} from 'react-redux'
 
 
 function Index(props) {
     let category = props.type
-    console.log("Product Cover")
-    console.log(category)
+
+    // Id for Scolling
     let id = category.substr(0, category.indexOf('H')); 
 
-    const state = useSelector((state)=>state.rootReducer[category][0])
+    const state = useSelector((state)=>state.coverPageReducer[category][0])
     const theme = state.theme === 'dark' ? 'dark':'light'
+
     return (
         <div className={cx(styles.productCover,styles[theme])}>
             <div className={cx(styles.productContainer)}>
@@ -34,6 +34,7 @@ function Index(props) {
                 </div>
             </div>
         </div>
+      
     )
 }
 

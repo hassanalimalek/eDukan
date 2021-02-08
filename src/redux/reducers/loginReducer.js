@@ -1,4 +1,3 @@
-import { isEqual } from 'lodash';
 let defaultVal ={
     login:false
 }
@@ -6,26 +5,13 @@ let defaultVal ={
 const loginReducer = (state=defaultVal,action)=>{
     switch(action.type){
         case 'login':
-            console.log("Login!!!!")
-            let correctCredentials= {username:"abc",password:"123"}
-            if(isEqual(correctCredentials,action.payload)){
-               state["login"]=true;
-                console.log(state)
-                console.log("Returning Login!!!!")
-                return {...state}
-            }
-           
+            state["login"]=true;
             return {...state}
         case 'logout':
-            console.log("Logout Case")
-            console.log("state")
             state["login"]=false;
-            console.log("state")
+            window.localStorage.setItem('user',JSON.stringify(null))
             return {...state}
-        
         default:
-            console.log("Login Reducer")
-            console.log(state)
             return state
     }
 }

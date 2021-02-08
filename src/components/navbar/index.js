@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom'
 // History
 import { useHistory } from "react-router-dom";
 
-// Modal Component
-import Modal from '../modal'
+// Dialog Component
+import Dialog from '../loginDialog'
 
 // Icons
 import { FaFacebookF,FaShoppingCart } from 'react-icons/fa'
@@ -17,32 +17,30 @@ import { AiOutlineTwitter } from 'react-icons/ai'
 import { IoExitOutline } from 'react-icons/io5'
 
 
-
-
 function Index() {
+
     let dispatch = useDispatch();
     let history = useHistory();
-
-    let [modalState,setModalState] = useState(false);
+    let [dialogState,setDialogState] = useState(false);
     let cartState = useSelector((state)=>state["cartReducer"]);
     let loginState =useSelector((state)=>state["loginReducer"]["login"])
-
-    // Cart Value in Navbar 
+    
+    // Cart Value Initially 0
     var value=0;
     if(cartState.length){
         value=(cartState[0].totalProducts)
     }
     
-   let closeModal=()=>{
-       setModalState(false);
+   let closeDialog=()=>{
+       setDialogState(false);
    }
     
    let logout = ()=>{
         dispatch({ type: 'logout'})
-        closeModal();
+        localStorage.clear();
+        closeDialog();
         history.push('/')   
     }
-
 
     return (
         <>
@@ -63,15 +61,14 @@ function Index() {
                         <Link
                          to="/cart" className={styles.productCart}><FaShoppingCart/><span className={styles.cartValue}>{value}</span></Link>
                          {(loginState)?
-                                 <button onClick={()=>logout()}  className={cx("generic_btn",styles.login_btn)}>Logout  {<IoExitOutline className={styles.logoutIcon}/>}</button>:
-                                 <button onClick={()=>{setModalState(true)}}  className={cx("generic_btn",styles.login_btn)}>Login</button>
+                                 <button onClick={()=>logout()}  className={cx("generic_btn",styles.login_btn)}>{(JSON.parse(window.localStorage.user)).displayName} {<IoExitOutline className={styles.logoutIcon}/>}</button>:
+                                 <button onClick={()=>{setDialogState(true)}}  className={cx("generic_btn",styles.login_btn)}>Login</button>
                          }
-                         <Modal state={modalState} closeModal={closeModal}/>
+                         <Dialog state={dialogState} closeDialog={closeDialog}/>
                     </div>
                 </div>
             </div>
         </nav>
-        
         </>
     )
 }

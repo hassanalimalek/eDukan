@@ -1,97 +1,91 @@
 // Checkout
-$light_shadow:2px 5px 3px 0 rgba(0,0,0,0.25);
-$darkShadow:4px 5px 3px 0 rgba(0,0,0,0.5);
+$light_shadow: 2px 5px 3px 0 rgba(0, 0, 0, 0.25);
+$darkShadow: 4px 5px 3px 0 rgba(0, 0, 0, 0.5);
 $mainTransition: all 0.3s linear;
 
-.checkout{
-    width:95%;
-    min-height: 80vh;
-    margin:auto;
-    padding-top:1rem;
-    .checkoutTitle{
-        // margin:1rem;
-        font-weight: 300;
-        letter-spacing:0.1rem;
-        margin-bottom: 1rem;
-     }
-     h4{
-        font-weight: 300;
-        margin-bottom: 1rem;
-        font-size: 1.4rem;
-        text-indent: 0.5rem;
-    }
-    .checkout_container{
-        padding:1rem;
-        display:flex;
-        justify-content: space-between;
-       
-     
-    }
+.checkout {
+  width: 95%;
+  min-height: 88vh;
+  margin: auto;
+  padding-top: 1rem;
+  .checkoutTitle {
+    // margin:1rem;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+  }
+  h4 {
+    font-weight: 300;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    text-indent: 0.5rem;
+  }
+  .checkout_container {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
 
-    
-    
-
-    // Check Out Card
-    .totalCard{
-        width:40%;
-        align-self: flex-start;
-        // background-color:#888;
-        padding: 1rem;
-        // border: 1px solid black;
-        margin: 0 1rem;
-        box-shadow:$light_shadow;
-        transition: $mainTransition;
-        
+  // Check Out Card
+  .totalCard {
+    width: 40%;
+    align-self: flex-start;
+    // background-color:#888;
+    padding: 1rem;
+    // border: 1px solid black;
+    margin: 0 1rem;
+    box-shadow: $light_shadow;
+    transition: $mainTransition;
+  }
+  .cardContainer_row {
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: space-between;
+    // border-bottom: 0.5px solid #888;
+    padding: 0.5rem;
+    font-weight: 300;
+  }
+  .cardTitle {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #888;
+    font-weight: 400;
+    .editCart {
+      font-size: 0.9rem;
+      align-self: center;
     }
-    .cardContainer_row{
-            display: flex;
-            font-size: 1.2rem;
-            justify-content: space-between;
-            // border-bottom: 0.5px solid #888;
-            padding: 0.5rem;
-            font-weight: 300;
+  }
+  .lastRow {
+    font-weight: 400;
+  }
+  .placeOrderBtn {
+    background-color: #222;
+    color: white;
+    transition: 0.4s;
+    &:hover {
+      background-color: #7dd5fd;
+      color: #222;
     }
-    .cardTitle{
-        padding-bottom: 1.5rem;
-        margin-bottom: 1rem;
-        border-bottom: 1px solid #888;
-        font-weight: 400;
-        .editCart{
-            font-size: 0.9rem;
-            align-self: center;
-        }
-    }
-    .lastRow{
-        font-weight: 400;
-    }
-    .placeOrderBtn{
-        background-color:#222;
-        color: white;
-        transition: 0.4s;
-        &:hover{
-            background-color:#7DD5FD;
-            color:#222;
-        }
-    }
+  }
 }
 
-@media only screen and (max-width: 780px){
-    .checkout{
-        width: 98%;
-        .totalCard{
-            padding: 0.5rem;
-            width:65%;
-        }
-
+@media only screen and (max-width: 780px) {
+  .checkout {
+    width: 98%;
+    .totalCard {
+      padding: 0.5rem;
+      width: 65%;
     }
+  }
 }
-@media only screen and (max-width: 600px){
-    .checkout{
-        .checkout_container{
-            flex-direction: column;
-            .totalCard{
-                width: 100%;
-                margin: 1rem auto;
-            }
-        }
-}}
+@media only screen and (max-width: 600px) {
+  .checkout {
+    .checkout_container {
+      flex-direction: column;
+      .totalCard {
+        width: 100%;
+        margin: 1rem auto;
+      }
+    }
+  }
+}
