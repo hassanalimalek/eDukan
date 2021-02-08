@@ -71,7 +71,7 @@ function Index(props) {
         
     if(product){
         let productSizes;
-        let sizeTitle;
+        let sizeTitle = ()=> null;
         if(category!=="watches"){
             sizeTitle  = () => {return(
             <span className="text-dark">Available Sizes</span>)}
