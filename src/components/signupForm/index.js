@@ -79,10 +79,10 @@ function Index({updateDialogFunc,closeDialog,setDialogState,goToLogin}) {
                             placeholder="Confirm Password"
                             required/>
                         </div>
-                        <div className="m-1">
+                        <div className="mt-1">
                           <label className="text-danger font-weight-bold" htmlFor="">{signUpErrorType}</label>
                         </div>
-                        <div className="form-group small clearfix">
+                        <div className="mt-0 small ">
                             <label className="check-inline">
                                 <span className="forgot-link">By Creating account you agree to our terms & policy.</span>
                             </label>
