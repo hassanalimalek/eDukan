@@ -38,7 +38,7 @@ function Index(props) {
     if(productArray){
       let products1 =Object.keys(productArray).map((id)=>{
           return (
-              <div key = {id} className={cx(styles.carousel_item,"card")}>
+              <div key = {id} aria-hidden="false"  className={cx(styles.carousel_item,"card")}>
                 <img alt="alt" src={productArray[id]["imgSrc"]}></img>
                 <hr/>
                 <div className={cx("card-body")}>

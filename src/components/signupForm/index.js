@@ -6,6 +6,7 @@ import { AiFillCloseSquare } from 'react-icons/ai'
 import { auth } from '../../utils/firebase'
 
 
+
 function Index({updateDialogFunc,closeDialog,setDialogState,goToLogin}) {
     
     let [signUpErrorType,setSignUpErrorType] = useState();
@@ -14,6 +15,7 @@ function Index({updateDialogFunc,closeDialog,setDialogState,goToLogin}) {
         document.getElementById("signUpForm").reset();
         goToLogin();
     }
+ 
 
     let signUpSubmit = (e)=>{
         e.preventDefault();
@@ -28,9 +30,15 @@ function Index({updateDialogFunc,closeDialog,setDialogState,goToLogin}) {
         else{
             setSignUpErrorType("")
             auth.createUserWithEmailAndPassword(email,password).then((response)=>{
+                console.log("Sign Up !!!!!@@@@")
+                console.log(response.user)
+                  
                 response.user.updateProfile({
                     displayName:dName
                   })
+                console.log(response.user)
+
+                console.log(response.user)
                 if(response.user.emailVerified===false){
                     auth.currentUser.sendEmailVerification().then(function() {
                          document.getElementById("signUpForm").reset();

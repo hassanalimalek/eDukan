@@ -1,5 +1,5 @@
-import watchHeader from './assets/images/hero_watch.png'
-import jerseyHeader from './assets/images/hero_shirt.png';
+import watchHeader from './assets/images/hero_watch.webp'
+import jerseyHeader from './assets/images/hero_shirt.webp';
 
 
 let data = {

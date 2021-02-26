@@ -11,9 +11,11 @@ function Index() {
     return (
         <div className={cx(styles.searchBar)}>
            <div className={cx(styles.searchBarContainer)}>
-            <h4 className={styles.searchTitle}>Search the Store</h4>
+            <label for="product_search"><h4 className={styles.searchTitle}>Search the Store</h4></label>
             <div className={cx(styles.inputGroup,"input-group mb-3")}>
-                    <input type="text" className="form-control" placeholder="Search Product..."
+                    <input type="text" 
+                    id="product_search"
+                    className="form-control" placeholder="Search Product..."
                     onChange={(e)=>{setSearchVal(e.target.value)}}
                     value={searchVal} 
                    />

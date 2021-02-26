@@ -82,8 +82,7 @@ function Routing() {
                 </Route>
                 <Route exact path="/checkout" render={(props)=>
                       <Checkout {...props}/>
-                }/>
-                   
+                }/>   
                 <Footer/>
            </BrowserRouter>
             )
