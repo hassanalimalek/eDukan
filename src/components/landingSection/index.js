@@ -1,7 +1,7 @@
 import React from 'react'
 import Styles from './landingSection.module.scss'
 import cx from 'classnames'
-import landingImg from '../../assets/images/landingImg.png'
+import landingImg from '../../assets/images/landingImg.webp'
 import Typist from 'react-text-typist';
 
 

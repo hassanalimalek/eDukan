@@ -1,7 +1,4 @@
-
-
 const cartReducer = (state=[],action)=>{
-
     // Update Product Quantity Count
     let countInc = (product)=>{
         if(product.hasOwnProperty('count')){
@@ -14,7 +11,6 @@ const cartReducer = (state=[],action)=>{
         }
         return [product];
     }   
-   
     let updateSubPrice = (index)=>{
         state[index].subPrice = state[index].count *  state[index].basePrice
     }
