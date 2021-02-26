@@ -11,7 +11,7 @@ function Index() {
     return (
         <div className={cx(styles.searchBar)}>
            <div className={cx(styles.searchBarContainer)}>
-            <label for="product_search"><h4 className={styles.searchTitle}>Search the Store</h4></label>
+            <label htmlFor="product_search"><h4 className={styles.searchTitle}>Search the Store</h4></label>
             <div className={cx(styles.inputGroup,"input-group mb-3")}>
                     <input type="text" 
                     id="product_search"
