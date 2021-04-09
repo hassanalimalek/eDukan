@@ -41,16 +41,16 @@ function Routing() {
     let getProducts = async ()=>{
         await db.ref('products').on('value',snapshot=>{
             if(snapshot.val()!=null){
-              let x ={...(snapshot.val())}
-              dispatch({ type: 'intialProducts',payload:{products: x} })
-              setProductObject([x])
+              let products ={...(snapshot.val())}
+              dispatch({ type: 'intialProducts',payload:{products: products} })
+              setProductObject([products])
             }
         })
     }
 
     useEffect(()=>{
         getProducts()
-    },[])// eslint-disable-line
+    },[]) // eslint-disable-line
 
     // Loading Bar While fetching Products.
     if(productObjects===false){

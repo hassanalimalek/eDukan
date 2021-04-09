@@ -15,7 +15,6 @@ function Index({updateDialogFunc,closeDialog,setDialogState,goToSignUp}) {
         e.preventDefault();
         let [username,password]=[e.target.username.value,e.target.password.value]
         auth.signInWithEmailAndPassword(username,password).then((response)=>{
-            console.log(auth.currentUser)
             if (auth.currentUser.emailVerified){
                 localStorage.clear();
                 window.localStorage.setItem('user',JSON.stringify(auth.currentUser))

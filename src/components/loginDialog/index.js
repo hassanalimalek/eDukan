@@ -36,8 +36,6 @@ function Index(props) {
         setDialogState(props.state)
     },[props.state])
 
-    
-
 
     let goToLogin = (e)=>{
         setloginDialogState(true);
