@@ -4,6 +4,9 @@ $mainTransition: all 0.3s linear;
 
 // Product Cart
 
+.full {
+  min-height: 90vh;
+}
 .productCartMainContainer {
   display: flex;
   flex-direction: column;
@@ -16,9 +19,7 @@ $mainTransition: all 0.3s linear;
   //   width: 95%;
   font-weight: 300;
 }
-.full {
-  min-height: 90vh;
-}
+
 .myBag {
   margin: 1rem;
   font-weight: 300;

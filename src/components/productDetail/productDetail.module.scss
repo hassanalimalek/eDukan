@@ -3,14 +3,17 @@
 .productDetail {
   background-color: #000000;
   color: white;
-  min-height: 100vh;
+  min-height: 85vh;
+  display: flex;
+
+  // border: 1px solid red;
 }
 .productContainer {
-  width: 90%;
+  width: 85%;
   margin: auto;
   display: flex;
   justify-content: space-between;
-  padding: 3rem 0;
+  padding: 2rem 0;
   // border: 1px solid red;
   border-radius: 0.5rem;
 }
